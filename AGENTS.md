@@ -1,6 +1,6 @@
 # 廣得好 CanDuckGo Marketing Site — Agent 指引
 
-呢個 repo 係 `canduckgo.com` 嘅 production 靜態網站，獨立於 `../game/` Unity repo。
+呢個 repo 係 `canduckgo.com` 嘅 production 靜態網站，獨立於 `../CanDuckGo/` Unity repo。
 
 ## 產品同私隱約束
 
