@@ -1,0 +1,84 @@
+CanDuckGo — Third-Party Notices
+廣得好 — 第三方授權聲明
+
+This app includes third-party data, fonts, and software listed below. The
+corresponding complete licence texts follow this notice in the app.
+
+本 app 使用以下第三方數據、字型及軟件。相關授權全文緊接本聲明，亦可於
+家長角落內閱讀。
+
+Public notices and downloadable modified stroke data:
+公開聲明及修改後筆劃資料下載：
+https://canduckgo.com/licenses/
+
+
+1. Make Me a Hanzi stroke data / 筆劃資料
+
+Source: Make Me a Hanzi graphics.txt
+https://github.com/skishore/makemeahanzi
+
+graphics.txt is derived from Arphic PL KaitiM GB and Arphic PL UKai,
+Copyright (C) 1999 Arphic Technology Co., Ltd., and is distributed under the
+Arphic Public License.
+
+Modifications by CanDuckGo on 2026-07-15: selected the curriculum characters,
+split the source into per-character JSON, retained the SVG stroke outlines and
+median point paths, and combined them with learning metadata for runtime
+tessellation. Each modified JSON file contains this modification notice. The
+modified data is freely available under the Arphic Public License at the public
+URL above.
+
+
+2. Rime Cantonese Jyutping data / 粵拼資料
+
+Source: rime-cantonese, jyut6ping3.chars.dict.yaml
+https://github.com/rime/rime-cantonese
+
+Developed and maintained by the Cantonese Computational Linguistics
+Infrastructure Development Workgroup (CanCLID). Licensed under Creative
+Commons Attribution 4.0 International (CC BY 4.0).
+
+Modifications by CanDuckGo on 2026-07-15: selected readings for curriculum
+characters, ranked a primary reading, and applied documented curriculum
+overrides for polyphonic characters where present. The modified character JSON
+is available at the public URL above.
+
+
+3. Noto Sans CJK TC
+
+Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name
+"Noto". Noto is a trademark of Google LLC. Licensed under the SIL Open Font
+License, Version 1.1.
+
+Source: https://github.com/notofonts/noto-cjk
+
+
+4. CanDuckGo Display (modified Kosefont JP subset)
+
+Copyright 2020-2024 LXGW.
+Copyright 2014 Nozomi Seto.
+
+Source: Kosefont JP
+https://github.com/lxgw/kose-font
+
+Licensed under the SIL Open Font License, Version 1.1.
+
+Modifications by CanDuckGo: subset to the app's display-face character
+inventory and renamed from "Kosefont JP" to "CanDuckGo Display". The modified
+font remains licensed under the SIL Open Font License, Version 1.1.
+
+
+5. Liberation Sans
+
+Digitized data copyright 2010 Google Corporation.
+Copyright 2012 Red Hat, Inc.
+Liberation is a Reserved Font Name.
+
+Licensed under the SIL Open Font License, Version 1.1.
+
+
+6. LibTessDotNet
+
+Copyright (C) 2011 Silicon Graphics, Inc. All Rights Reserved.
+
+Licensed under the SGI Free Software License B, Version 2.0.

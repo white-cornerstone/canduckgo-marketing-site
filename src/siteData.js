@@ -127,8 +127,9 @@ export const landingCopy = {
     footSupport: "支援",
     footPrivacy: "私隱政策",
     footTerms: "使用條款（EULA）",
+    footLicenses: "第三方授權",
     footCredits: [
-      "筆劃數據：Hanzi Writer / makemeahanzi（Arphic Public License）",
+      "筆劃數據：Make Me a Hanzi（Arphic Public License）",
       "粵拼：rime-cantonese（CC BY 4.0）",
       "字型：Noto Sans TC、Kosefont（SIL OFL 1.1）",
     ],
@@ -282,8 +283,9 @@ export const landingCopy = {
     footSupport: "Support",
     footPrivacy: "Privacy Policy",
     footTerms: "Terms of Use (EULA)",
+    footLicenses: "Third-Party Licenses",
     footCredits: [
-      "Stroke data: Hanzi Writer / makemeahanzi (Arphic Public License)",
+      "Stroke data: Make Me a Hanzi (Arphic Public License)",
       "Jyutping: rime-cantonese (CC BY 4.0)",
       "Fonts: Noto Sans TC, Kosefont (SIL OFL 1.1)",
     ],
@@ -346,6 +348,65 @@ export const supportCopy = {
     links: "Other documents:",
     privacyLink: "Privacy Policy",
     termsLink: "Terms of Use (EULA)",
+  },
+};
+
+export const licensesCopy = {
+  zh: {
+    back: "返回",
+    title: "第三方授權",
+    updated: "最後更新：2026 年 7 月 15 日",
+    summary:
+      "廣得好使用開放授權嘅筆劃、粵拼、字型同軟件。呢頁列出來源、修改內容同完整授權資料，亦提供修改後筆劃資料公開下載。",
+    download: "下載修改後筆劃資料（ZIP）",
+    plainText: "查看純文字完整聲明",
+    contactLine: "有任何授權問題，歡迎電郵：",
+    sections: [
+      [
+        "Make Me a Hanzi 筆劃資料",
+        "來源：Make Me a Hanzi graphics.txt（https://github.com/skishore/makemeahanzi），衍生自 Arphic PL KaitiM GB 同 Arphic PL UKai，Copyright (C) 1999 Arphic Technology Co., Ltd.，按 Arphic Public License 發佈。\n\n廣得好於 2026-07-15 作出修改：抽取課程用字、拆分成逐字 JSON、保留 SVG 筆劃輪廓同 median 點列，再加入學習 metadata 供 app runtime tessellation。每個修改後 JSON 均附有修改告示；完整修改資料可由本頁下載，並按同一 Arphic Public License 再分發。",
+      ],
+      [
+        "Rime Cantonese 粵拼資料",
+        "來源：rime-cantonese jyut6ping3.chars.dict.yaml（https://github.com/rime/rime-cantonese），由粵語計算語言學基礎建設組（CanCLID）開發及維護，按 CC BY 4.0 發佈。\n\n廣得好於 2026-07-15 作出修改：抽取課程用字讀音、排列主要讀音，並按課程需要為多音字加入有記錄嘅指定讀音。修改後資料亦包含喺下載檔。",
+      ],
+      [
+        "字型",
+        "Noto Sans CJK TC：Copyright 2014-2021 Adobe；Noto 為 Google LLC 商標；SIL Open Font License 1.1。\n\nCanDuckGo Display：Kosefont JP 修改 subset，Copyright 2020-2024 LXGW、Copyright 2014 Nozomi Seto；按 SIL Open Font License 1.1 發佈。廣得好將字型縮減至 app display 字符集，並改名為 CanDuckGo Display。\n\nLiberation Sans：Digitized data Copyright 2010 Google Corporation、Copyright 2012 Red Hat, Inc.；SIL Open Font License 1.1。",
+      ],
+      [
+        "LibTessDotNet",
+        "Copyright (C) 2011 Silicon Graphics, Inc. All Rights Reserved. 按 SGI Free Software License B, Version 2.0 發佈。完整授權全文已包含喺 app 同本頁純文字聲明。",
+      ],
+    ],
+  },
+  en: {
+    back: "Back",
+    title: "Third-Party Licenses",
+    updated: "Last updated: 15 July 2026",
+    summary:
+      "CanDuckGo uses openly licensed stroke data, Jyutping data, fonts, and software. This page records their sources, our modifications, and the applicable licenses, and makes the modified stroke data publicly available.",
+    download: "Download modified stroke data (ZIP)",
+    plainText: "View the complete plain-text notices",
+    contactLine: "Questions about licensing? Email us at",
+    sections: [
+      [
+        "Make Me a Hanzi stroke data",
+        "Source: Make Me a Hanzi graphics.txt (https://github.com/skishore/makemeahanzi), derived from Arphic PL KaitiM GB and Arphic PL UKai, Copyright (C) 1999 Arphic Technology Co., Ltd., and distributed under the Arphic Public License.\n\nModifications by CanDuckGo on 2026-07-15: selected the curriculum characters, split the source into per-character JSON, retained the SVG stroke outlines and median point paths, and combined them with learning metadata for runtime tessellation. Every modified JSON includes a modification notice. The complete modified data can be downloaded from this page and redistributed under the same Arphic Public License.",
+      ],
+      [
+        "Rime Cantonese Jyutping data",
+        "Source: rime-cantonese jyut6ping3.chars.dict.yaml (https://github.com/rime/rime-cantonese), developed and maintained by the Cantonese Computational Linguistics Infrastructure Development Workgroup (CanCLID), under CC BY 4.0.\n\nModifications by CanDuckGo on 2026-07-15: selected readings for curriculum characters, ranked a primary reading, and applied documented curriculum overrides for polyphonic characters where present. The modified data is included in the download.",
+      ],
+      [
+        "Fonts",
+        "Noto Sans CJK TC: Copyright 2014-2021 Adobe; Noto is a trademark of Google LLC; SIL Open Font License 1.1.\n\nCanDuckGo Display: modified Kosefont JP subset, Copyright 2020-2024 LXGW and Copyright 2014 Nozomi Seto; SIL Open Font License 1.1. CanDuckGo subset the font to the app display inventory and renamed it CanDuckGo Display.\n\nLiberation Sans: digitized data Copyright 2010 Google Corporation and Copyright 2012 Red Hat, Inc.; SIL Open Font License 1.1.",
+      ],
+      [
+        "LibTessDotNet",
+        "Copyright (C) 2011 Silicon Graphics, Inc. All Rights Reserved. Distributed under the SGI Free Software License B, Version 2.0. The complete license text is included in the app and in the plain-text notices linked above.",
+      ],
+    ],
   },
 };
 
@@ -457,7 +518,7 @@ export const termsCopy = {
       ],
       [
         "4. 知識產權及第三方授權",
-        "App 及其內容（包括美術、音效、程式碼）由我哋或授權方擁有。App 使用以下開源數據及字型，並按其授權條款附有聲明：\n・筆劃數據：Hanzi Writer / makemeahanzi（Arphic Public License）\n・粵拼數據：rime-cantonese（CC BY 4.0）\n・字型：Noto Sans TC、Kosefont（SIL Open Font License 1.1）",
+        "App 及其內容（包括美術、音效、程式碼）由我哋或授權方擁有。App 使用以下開放授權數據、字型及軟件，並按其授權條款附有聲明：\n・筆劃數據：Make Me a Hanzi（Arphic Public License）\n・粵拼數據：rime-cantonese／CanCLID（CC BY 4.0）\n・字型：Noto Sans CJK TC、CanDuckGo Display／Kosefont JP、Liberation Sans（SIL Open Font License 1.1）\n・筆劃三角化：LibTessDotNet（SGI Free Software License B 2.0）\n\n完整聲明、授權全文同修改後筆劃資料下載：canduckgo.com/licenses/",
       ],
       [
         "5. 維護及支援",
@@ -506,7 +567,7 @@ export const termsCopy = {
       ],
       [
         "4. Intellectual property & third-party licenses",
-        "The app and its content (including art, audio and code) are owned by us or our licensors. The app uses the following open-source data and fonts, with attribution included per their licenses:\n・Stroke data: Hanzi Writer / makemeahanzi (Arphic Public License)\n・Jyutping data: rime-cantonese (CC BY 4.0)\n・Fonts: Noto Sans TC, Kosefont (SIL Open Font License 1.1)",
+        "The app and its content (including art, audio and code) are owned by us or our licensors. The app uses the following openly licensed data, fonts, and software, with notices included under their licenses:\n・Stroke data: Make Me a Hanzi (Arphic Public License)\n・Jyutping data: rime-cantonese / CanCLID (CC BY 4.0)\n・Fonts: Noto Sans CJK TC, CanDuckGo Display / Kosefont JP, and Liberation Sans (SIL Open Font License 1.1)\n・Stroke tessellation: LibTessDotNet (SGI Free Software License B 2.0)\n\nComplete notices, license texts, and the modified stroke-data download: canduckgo.com/licenses/",
       ],
       [
         "5. Maintenance and support",

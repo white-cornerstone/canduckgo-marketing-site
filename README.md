@@ -8,6 +8,7 @@ Public marketing and store-compliance website for **廣得好 (CanDuckGo)**, a C
 - `/support/` — support contact and mailto form
 - `/privacy/` — privacy policy
 - `/terms/` — terms of use and EULA
+- `/licenses/` — third-party notices and downloadable modified stroke data
 
 ## Local development
 
@@ -33,6 +34,6 @@ Pushes to `main` build and deploy the static site through GitHub Pages at `candu
 - `CanDuckGoDisplay.ttf` is a Kosefont subset, © 2020 LXGW, licensed under SIL Open Font License 1.1.
 - Noto Sans TC and M PLUS Rounded 1c are bundled through Fontsource and licensed under SIL Open Font License 1.1.
 - Game screenshots and voxel models are CanDuckGo product assets.
-- In-app stroke and pronunciation data credits shown on the site: Hanzi Writer / makemeahanzi (Arphic Public License) and rime-cantonese (CC BY 4.0).
+- In-app stroke and pronunciation data credits shown on the site: Make Me a Hanzi (Arphic Public License) and rime-cantonese / CanCLID (CC BY 4.0).
 
 The repository is public for website delivery. No license is granted for the original CanDuckGo artwork, screenshots, product copy, or source code unless stated otherwise.

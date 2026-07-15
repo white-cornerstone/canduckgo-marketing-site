@@ -1034,6 +1034,17 @@ voxel-prop {
   line-height: 1.9;
   font-weight: 700;
 }
+.legal-downloads {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 0 32px;
+}
+.legal-downloads > a:not(.cta-button) {
+  color: #356e9a;
+  font-weight: 800;
+}
 .legal-card {
   margin-bottom: 20px;
   padding: 30px 34px;
@@ -1051,6 +1062,7 @@ voxel-prop {
   font-size: 16px;
   line-height: 2;
   white-space: pre-line;
+  overflow-wrap: anywhere;
   text-wrap: pretty;
 }
 .contact-line {

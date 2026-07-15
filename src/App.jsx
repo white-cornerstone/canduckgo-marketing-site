@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa6";
 import {
   landingCopy,
+  licensesCopy,
   privacyCopy,
   supportCopy,
   termsCopy,
@@ -491,6 +492,7 @@ function Footer({ t }) {
             <a href={page("support/")}>{t.footSupport}</a>
             <a href={page("privacy/")}>{t.footPrivacy}</a>
             <a href={page("terms/")}>{t.footTerms}</a>
+            <a href={page("licenses/")}>{t.footLicenses}</a>
           </nav>
         </div>
       </div>
@@ -549,7 +551,7 @@ function SubpageNav({ t, lang, toggleLang }) {
 
 function LegalPage({ kind }) {
   const [lang, toggleLang] = useLanguage();
-  const data = kind === "privacy" ? privacyCopy : termsCopy;
+  const data = kind === "privacy" ? privacyCopy : kind === "terms" ? termsCopy : licensesCopy;
   const t = data[lang];
   useEffect(() => {
     document.title = `${t.title} — 廣得好 CanDuckGo`;
@@ -561,6 +563,14 @@ function LegalPage({ kind }) {
         <h1>{t.title}</h1>
         <p className="updated">{t.updated}</p>
         {t.summary && <div className="legal-summary">{t.summary}</div>}
+        {t.download && (
+          <div className="legal-downloads">
+            <a className="cta-button" href={asset("licenses/canduckgo-stroke-data.zip")} download>
+              {t.download}
+            </a>
+            <a href={asset("licenses/ALL-THIRD-PARTY-LICENSES.txt")}>{t.plainText}</a>
+          </div>
+        )}
         {t.sections.map(([heading, body]) => (
           <section className="legal-card" key={heading}>
             <h2>{heading}</h2>
@@ -675,6 +685,7 @@ export function App() {
   );
   if (route === "privacy") return <LegalPage kind="privacy" />;
   if (route === "terms") return <LegalPage kind="terms" />;
+  if (route === "licenses") return <LegalPage kind="licenses" />;
   if (route === "support") return <SupportPage />;
   return <LandingPage />;
 }
