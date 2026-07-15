@@ -1,0 +1,12 @@
+CanDuckGoDisplay.ttf (public/assets/CanDuckGoDisplay.ttf)
+
+A subset of "Kosefont JP" (小瀬フォント), Copyright © 2020 LXGW,
+https://github.com/lxgw/kose-font — a handwriting font derived from SetoFont.
+
+Licensed under the SIL Open Font License, Version 1.1 (full text in
+OFL-LICENSE.txt in this folder, also at https://openfontlicense.org).
+
+Modifications for CanDuckGo:
+- Subset to the CanDuckGo display-face inventory.
+- Font family renamed from "Kosefont JP" to "CanDuckGo Display" per OFL
+  derivative-naming practice.
