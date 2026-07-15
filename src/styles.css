@@ -618,6 +618,11 @@ voxel-prop {
 .section-heading--light > p:last-child {
   color: #eef8ff;
 }
+@media (min-width: 901px) {
+  .learning-map .section-heading > p:last-child {
+    margin-top: 0;
+  }
+}
 .map-cloud {
   position: absolute;
   height: 28px;
