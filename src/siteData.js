@@ -59,6 +59,8 @@ export const landingCopy = {
     ],
     shotsKicker: "遊戲截圖",
     shotsTitle: "入面係咁樣嘅",
+    shotsPrevious: "上一張遊戲截圖",
+    shotsNext: "下一張遊戲截圖",
     shotCaps: [
       "主畫面",
       "主題島地圖",
@@ -209,6 +211,8 @@ export const landingCopy = {
     ],
     shotsKicker: "SCREENSHOTS",
     shotsTitle: "A peek inside",
+    shotsPrevious: "Previous game screenshot",
+    shotsNext: "Next game screenshot",
     shotCaps: [
       "Title screen",
       "Theme island map",

@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   FaApple,
   FaBookOpen,
   FaCheck,
+  FaChevronLeft,
+  FaChevronRight,
   FaEnvelope,
   FaGooglePlay,
   FaHouse,
@@ -286,6 +288,11 @@ function LearningMap({ t }) {
 }
 
 function Screenshots({ t }) {
+  const stripRef = useRef(null);
+  const [scrollState, setScrollState] = useState({
+    canScrollLeft: false,
+    canScrollRight: false,
+  });
   const files = [
     "01-title",
     "02-map",
@@ -296,25 +303,84 @@ function Screenshots({ t }) {
     "07-trace-step",
     "08-report",
   ];
+
+  useEffect(() => {
+    const strip = stripRef.current;
+    if (!strip) return undefined;
+
+    const updateScrollState = () => {
+      const maxScrollLeft = strip.scrollWidth - strip.clientWidth;
+      const edgeTolerance = 20;
+      setScrollState({
+        canScrollLeft: strip.scrollLeft > edgeTolerance,
+        canScrollRight: strip.scrollLeft < maxScrollLeft - edgeTolerance,
+      });
+    };
+
+    updateScrollState();
+    strip.addEventListener("scroll", updateScrollState, { passive: true });
+    const resizeObserver = new ResizeObserver(updateScrollState);
+    resizeObserver.observe(strip);
+
+    return () => {
+      strip.removeEventListener("scroll", updateScrollState);
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  const scrollScreenshots = (direction) => {
+    const strip = stripRef.current;
+    const card = strip?.querySelector("figure");
+    if (!strip || !card) return;
+
+    const gap = Number.parseFloat(getComputedStyle(strip).columnGap) || 26;
+    strip.scrollBy({
+      left: direction * (card.getBoundingClientRect().width + gap),
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="screens section-pad">
       <div className="section-heading">
         <p className="kicker">{t.shotsKicker}</p>
         <h2>{t.shotsTitle}</h2>
       </div>
-      <div className="shot-strip">
-        {files.map((file, i) => (
-          <figure key={file}>
-            <div>
-              <img
-                src={asset(`assets/screens/${file}.png`)}
-                alt={`${t.shotCaps[i]} — CanDuckGo game screenshot`}
-                loading="lazy"
-              />
-            </div>
-            <figcaption>{t.shotCaps[i]}</figcaption>
-          </figure>
-        ))}
+      <div className="shot-carousel">
+        <div className="shot-strip" ref={stripRef}>
+          {files.map((file, i) => (
+            <figure key={file}>
+              <div>
+                <img
+                  src={asset(`assets/screens/${file}.png`)}
+                  alt={`${t.shotCaps[i]} — CanDuckGo game screenshot`}
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>{t.shotCaps[i]}</figcaption>
+            </figure>
+          ))}
+        </div>
+        {scrollState.canScrollLeft && (
+          <button
+            type="button"
+            className="shot-nav shot-nav--previous"
+            aria-label={t.shotsPrevious}
+            onClick={() => scrollScreenshots(-1)}
+          >
+            <FaChevronLeft aria-hidden="true" />
+          </button>
+        )}
+        {scrollState.canScrollRight && (
+          <button
+            type="button"
+            className="shot-nav shot-nav--next"
+            aria-label={t.shotsNext}
+            onClick={() => scrollScreenshots(1)}
+          >
+            <FaChevronRight aria-hidden="true" />
+          </button>
+        )}
       </div>
     </section>
   );
