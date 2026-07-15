@@ -2,6 +2,8 @@
 
 Public marketing and store-compliance website for **廣得好 (CanDuckGo)**, a Cantonese stroke-order learning game for children aged 4–12.
 
+CanDuckGo is published by **WHITE CORNERSTONE PTY LTD**. This exact legal entity name must stay consistent across the website policies, app copyright, App Store seller, and Google Play developer profile.
+
 ## Pages
 
 - `/` — bilingual product landing page

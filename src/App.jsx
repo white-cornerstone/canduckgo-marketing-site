@@ -503,7 +503,7 @@ function Footer({ t }) {
             <li key={credit}>{credit}</li>
           ))}
         </ul>
-        <p className="footer__copyright">© 2026 CanDuckGo</p>
+        <p className="footer__copyright">© 2026 WHITE CORNERSTONE PTY LTD</p>
       </div>
     </footer>
   );
@@ -612,6 +612,7 @@ function SupportPage() {
       <main className="support-main">
         <h1>{t.title}</h1>
         <p className="support-intro">{t.intro}</p>
+        <p className="support-operator">{t.operator}</p>
         <div className="support-links">
           <a href={`${page()}#faq`}>
           <strong>{t.faqTitle}</strong>

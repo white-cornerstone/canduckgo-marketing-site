@@ -297,6 +297,7 @@ export const supportCopy = {
     back: "返回",
     title: "支援",
     intro: "用 app 時遇到問題？有建議想話俾我哋知？我哋好樂意幫手。",
+    operator: "廣得好由 WHITE CORNERSTONE PTY LTD 發行及提供支援。",
     faqTitle: "常見問題",
     faqBody: "收費、裝置支援、離線遊玩等問題，可能已經有答案。",
     emailTitle: "直接電郵我哋",
@@ -322,6 +323,7 @@ export const supportCopy = {
     title: "Support",
     intro:
       "Having trouble with the app, or got a suggestion? We’re happy to help.",
+    operator: "CanDuckGo is published and supported by WHITE CORNERSTONE PTY LTD.",
     faqTitle: "FAQ",
     faqBody:
       "Pricing, device support, offline play — your answer might already be there.",
@@ -360,7 +362,7 @@ export const licensesCopy = {
       "廣得好使用開放授權嘅筆劃、粵拼、字型同軟件。呢頁列出來源、修改內容同完整授權資料，亦提供修改後筆劃資料公開下載。",
     download: "下載修改後筆劃資料（ZIP）",
     plainText: "查看純文字完整聲明",
-    contactLine: "有任何授權問題，歡迎電郵：",
+    contactLine: "WHITE CORNERSTONE PTY LTD 授權聯絡：",
     sections: [
       [
         "Make Me a Hanzi 筆劃資料",
@@ -388,7 +390,7 @@ export const licensesCopy = {
       "CanDuckGo uses openly licensed stroke data, Jyutping data, fonts, and software. This page records their sources, our modifications, and the applicable licenses, and makes the modified stroke data publicly available.",
     download: "Download modified stroke data (ZIP)",
     plainText: "View the complete plain-text notices",
-    contactLine: "Questions about licensing? Email us at",
+    contactLine: "Licensing contact for WHITE CORNERSTONE PTY LTD:",
     sections: [
       [
         "Make Me a Hanzi stroke data",
@@ -414,14 +416,14 @@ export const privacyCopy = {
   zh: {
     back: "返回",
     title: "私隱政策",
-    updated: "最後更新：2026 年 7 月",
+    updated: "最後更新：2026 年 7 月 15 日",
     summary:
       "簡單講：廣得好唔收集任何個人資料。冇廣告、冇追蹤、冇第三方分析。學習進度只儲存喺你部裝置入面。",
-    contactLine: "有任何私隱問題，歡迎電郵：",
+    contactLine: "WHITE CORNERSTONE PTY LTD 私隱聯絡：",
     sections: [
       [
         "1. 適用範圍",
-        "本政策適用於「廣得好 CanDuckGo」流動應用程式（iOS／iPadOS／Android）同埋 canduckgo.com 網站。廣得好係一個為兒童而設嘅廣東話筆劃學習遊戲，我哋以「預設唔收集」為原則設計。",
+        "本政策由 WHITE CORNERSTONE PTY LTD（下稱「我哋」）提供，適用於「廣得好 CanDuckGo」流動應用程式（iOS／iPadOS／Android）同埋 canduckgo.com 網站。廣得好係一個為兒童而設嘅廣東話筆劃學習遊戲，我哋以「預設唔收集」為原則設計。",
       ],
       [
         "2. 我哋收集啲乜",
@@ -456,14 +458,14 @@ export const privacyCopy = {
   en: {
     back: "Back",
     title: "Privacy Policy",
-    updated: "Last updated: July 2026",
+    updated: "Last updated: 15 July 2026",
     summary:
       "In short: CanDuckGo collects no personal data. No ads, no tracking, no third-party analytics. Learning progress is stored only on your device.",
-    contactLine: "Privacy questions? Email us at",
+    contactLine: "Privacy contact for WHITE CORNERSTONE PTY LTD:",
     sections: [
       [
         "1. Scope",
-        "This policy covers the “CanDuckGo 廣得好” mobile app (iOS / iPadOS / Android) and the canduckgo.com website. CanDuckGo is a Cantonese stroke-order learning game designed for children, built on a “collect nothing by default” principle.",
+        "This policy is provided by WHITE CORNERSTONE PTY LTD (“we”, “us”) and covers the “CanDuckGo 廣得好” mobile app (iOS / iPadOS / Android) and the canduckgo.com website. CanDuckGo is a Cantonese stroke-order learning game designed for children, built on a “collect nothing by default” principle.",
       ],
       [
         "2. What we collect",
@@ -501,12 +503,12 @@ export const termsCopy = {
   zh: {
     back: "返回",
     title: "使用條款及最終用戶授權協議（EULA）",
-    updated: "最後更新：2026 年 7 月",
-    contactLine: "有任何條款問題，歡迎電郵：",
+    updated: "最後更新：2026 年 7 月 15 日",
+    contactLine: "WHITE CORNERSTONE PTY LTD 條款聯絡：",
     sections: [
       [
         "1. 協議雙方",
-        "本使用條款及最終用戶授權協議（下稱「本協議」）係你（用戶，如屬兒童則由其家長或監護人代表）與「廣得好 CanDuckGo」開發者（下稱「我哋」）之間嘅協議。透過 Apple App Store 下載時，本協議屬你與我哋之間嘅協議，Apple 並非協議一方；Apple 及其附屬公司為本協議嘅第三方受益人，於你接受本協議後有權向你執行本協議。",
+        "本使用條款及最終用戶授權協議（下稱「本協議」）係你（用戶，如屬兒童則由其家長或監護人代表）與 WHITE CORNERSTONE PTY LTD（「廣得好 CanDuckGo」發行者，下稱「我哋」）之間嘅協議。透過 Apple App Store 下載時，本協議屬你與我哋之間嘅協議，Apple 並非協議一方；Apple 及其附屬公司為本協議嘅第三方受益人，於你接受本協議後有權向你執行本協議。",
       ],
       [
         "2. 授權範圍",
@@ -544,18 +546,21 @@ export const termsCopy = {
         "10. 終止",
         "本協議喺你或我哋終止前一直有效。如你違反本協議任何條款，你嘅授權會自動終止。",
       ],
-      ["11. 適用法律", "本協議受香港特別行政區法律管轄，並按其解釋。"],
+      [
+        "11. 適用法律",
+        "本協議受澳洲南澳州法律管轄並按其解釋。在適用法律容許嘅範圍內，南澳州法院具有非專屬司法管轄權。本協議任何內容均不排除、限制或修改澳洲消費者法下不可依法排除嘅消費者保障，亦不影響你所在地適用法律賦予而不可藉協議放棄嘅權利。",
+      ],
     ],
   },
   en: {
     back: "Back",
     title: "Terms of Use & End User License Agreement (EULA)",
-    updated: "Last updated: July 2026",
-    contactLine: "Questions about these terms? Email us at",
+    updated: "Last updated: 15 July 2026",
+    contactLine: "Terms contact for WHITE CORNERSTONE PTY LTD:",
     sections: [
       [
         "1. Parties",
-        "This Terms of Use and End User License Agreement (“Agreement”) is between you (the user — where the user is a child, represented by their parent or guardian) and the developer of “CanDuckGo 廣得好” (“we”, “us”). For downloads from the Apple App Store, this Agreement is concluded between you and us only, not with Apple; Apple and its subsidiaries are third-party beneficiaries of this Agreement and may enforce it against you upon your acceptance.",
+        "This Terms of Use and End User License Agreement (“Agreement”) is between you (the user — where the user is a child, represented by their parent or guardian) and WHITE CORNERSTONE PTY LTD, the publisher of “CanDuckGo 廣得好” (“we”, “us”). For downloads from the Apple App Store, this Agreement is concluded between you and us only, not with Apple; Apple and its subsidiaries are third-party beneficiaries of this Agreement and may enforce it against you upon your acceptance.",
       ],
       [
         "2. Scope of license",
@@ -595,7 +600,7 @@ export const termsCopy = {
       ],
       [
         "11. Governing law",
-        "This Agreement is governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region.",
+        "This Agreement is governed by and construed in accordance with the laws of South Australia, Australia. To the extent permitted by applicable law, the courts of South Australia have non-exclusive jurisdiction. Nothing in this Agreement excludes, restricts or modifies any consumer guarantee or other right that cannot lawfully be excluded under the Australian Consumer Law or any mandatory law applicable in your place of residence.",
       ],
     ],
   },
