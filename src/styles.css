@@ -934,8 +934,9 @@ voxel-prop {
   color: #aeb8c4;
 }
 .footer__meta {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
   gap: 28px;
   max-width: 1160px;
   margin: 62px auto 0;
@@ -944,8 +945,17 @@ voxel-prop {
   color: #8f99a6;
   font-size: 12px;
 }
-.footer__meta p:nth-last-child(2) {
-  flex: 1;
+.footer__credits {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+}
+.footer__copyright {
+  margin: 0;
+  white-space: nowrap;
 }
 .subpage {
   min-height: 100vh;
@@ -1226,12 +1236,10 @@ voxel-prop {
     margin: auto;
   }
   .footer__meta {
-    align-items: flex-start;
-    flex-wrap: wrap;
+    grid-template-columns: auto minmax(0, 1fr);
   }
-  .footer__meta p:nth-last-child(2) {
-    flex-basis: 100%;
-    order: 3;
+  .footer__copyright {
+    grid-column: 2;
   }
 }
 @media (max-width: 600px) {
@@ -1375,12 +1383,16 @@ voxel-prop {
     justify-content: center;
   }
   .footer__meta {
-    display: grid;
+    grid-template-columns: 1fr;
     gap: 14px;
     text-align: center;
   }
   .footer__meta .brand {
     justify-self: center;
+  }
+  .footer__credits,
+  .footer__copyright {
+    grid-column: 1;
   }
   .legal-main,
   .support-main {

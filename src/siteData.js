@@ -125,8 +125,11 @@ export const landingCopy = {
     footSupport: "支援",
     footPrivacy: "私隱政策",
     footTerms: "使用條款（EULA）",
-    footCredits:
-      "筆劃數據：Hanzi Writer / makemeahanzi（Arphic Public License）· 粵拼：rime-cantonese（CC BY 4.0）· 字型：Noto Sans TC、Kosefont（SIL OFL 1.1）",
+    footCredits: [
+      "筆劃數據：Hanzi Writer / makemeahanzi（Arphic Public License）",
+      "粵拼：rime-cantonese（CC BY 4.0）",
+      "字型：Noto Sans TC、Kosefont（SIL OFL 1.1）",
+    ],
   },
   en: {
     navFeatures: "Features",
@@ -275,8 +278,11 @@ export const landingCopy = {
     footSupport: "Support",
     footPrivacy: "Privacy Policy",
     footTerms: "Terms of Use (EULA)",
-    footCredits:
-      "Stroke data: Hanzi Writer / makemeahanzi (Arphic Public License) · Jyutping: rime-cantonese (CC BY 4.0) · Fonts: Noto Sans TC, Kosefont (SIL OFL 1.1)",
+    footCredits: [
+      "Stroke data: Hanzi Writer / makemeahanzi (Arphic Public License)",
+      "Jyutping: rime-cantonese (CC BY 4.0)",
+      "Fonts: Noto Sans TC, Kosefont (SIL OFL 1.1)",
+    ],
   },
 };
 

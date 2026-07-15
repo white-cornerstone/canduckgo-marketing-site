@@ -430,8 +430,12 @@ function Footer({ t }) {
       </div>
       <div className="footer__meta">
         <Brand compact />
-        <p>{t.footCredits}</p>
-        <p>© 2026 CanDuckGo</p>
+        <ul className="footer__credits">
+          {t.footCredits.map((credit) => (
+            <li key={credit}>{credit}</li>
+          ))}
+        </ul>
+        <p className="footer__copyright">© 2026 CanDuckGo</p>
       </div>
     </footer>
   );
