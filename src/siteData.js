@@ -80,7 +80,7 @@ export const landingCopy = {
       ],
       [
         "資料留喺裝置",
-        "預設唔收集任何個人資料，學習進度只儲存喺本機，唔會上傳。",
+        "我哋唔會接收或收集個人資料；可選暱稱同學習進度只儲存喺本機，唔會上傳。",
       ],
       ["離線完全可玩", "飛機上、車上都玩到，唔使 Wi-Fi、唔使擔心數據。"],
       [
@@ -107,6 +107,10 @@ export const landingCopy = {
       [
         "要唔要上網先玩到？",
         "唔使。落咗 app 之後離線完全可玩，進度儲存喺裝置入面。雲端同步係家長主動選擇先會開。",
+      ],
+      [
+        "屋企有幾個小朋友，可以分開進度嗎？",
+        "可以。每部裝置最多有 6 個小朋友學習檔案，各自保存星星、關卡、貼紙同已學字。家長可加可選暱稱，全部資料仍然只留喺裝置。",
       ],
       [
         "支援咩裝置？",
@@ -233,7 +237,7 @@ export const landingCopy = {
       ],
       [
         "Data stays on device",
-        "No personal data is collected by default. Learning progress is stored locally and never uploaded.",
+        "We do not receive or collect personal data. Optional nicknames and learning progress stay on the device and are never uploaded.",
       ],
       [
         "Fully playable offline",
@@ -263,6 +267,10 @@ export const landingCopy = {
       [
         "Do I need internet to play?",
         "No. Once installed, the game is fully playable offline and progress is saved on the device. Cloud sync is strictly opt-in by a parent.",
+      ],
+      [
+        "Can siblings keep separate progress?",
+        "Yes. Each device supports up to 6 learner profiles, with separate stars, levels, stickers and learned characters. Optional nicknames and all profile data stay on the device.",
       ],
       [
         "Which devices are supported?",
@@ -416,9 +424,9 @@ export const privacyCopy = {
   zh: {
     back: "返回",
     title: "私隱政策",
-    updated: "最後更新：2026 年 7 月 15 日",
+    updated: "最後更新：2026 年 7 月 18 日",
     summary:
-      "簡單講：廣得好唔收集任何個人資料。冇廣告、冇追蹤、冇第三方分析。學習進度只儲存喺你部裝置入面。",
+      "簡單講：廣得好唔會接收或收集個人資料。冇廣告、冇追蹤、冇第三方分析。可選暱稱同學習進度只儲存喺你部裝置入面。",
     contactLine: "WHITE CORNERSTONE PTY LTD 私隱聯絡：",
     sections: [
       [
@@ -427,7 +435,7 @@ export const privacyCopy = {
       ],
       [
         "2. 我哋收集啲乜",
-        "App 內：唔收集任何個人資料。冇註冊、冇登入、唔會問攞姓名、電郵、電話、位置或任何識別資料。\n\n學習進度（星星、完成關卡、貼紙）只儲存喺你部裝置本機，唔會上傳到任何伺服器。刪除 app 即會一併刪除所有進度資料。",
+        "App 冇註冊、冇登入，亦唔會要求電郵、電話、位置、生日、性別、學校或家長帳戶。家長可以為每個本機學習檔案輸入一個可選暱稱；WHITE CORNERSTONE PTY LTD 唔會接收或存取呢個暱稱。\n\n每部裝置最多有 6 個學習檔案。暱稱同學習進度（星星、完成關卡、貼紙、已學字）只儲存喺你部裝置本機，唔會上傳到任何伺服器。刪除 app 即會一併刪除所有本機學習檔案。",
       ],
       [
         "3. 廣告同追蹤",
@@ -439,7 +447,7 @@ export const privacyCopy = {
       ],
       [
         "5. 雲端同步（將來功能，自願開啟）",
-        "將來如果推出跨裝置進度同步，會係完全自願（opt-in），並且必須由家長主動開啟。屆時同步嘅只係學習進度數據，我哋會喺開啟前清楚說明儲存內容、位置同刪除方法，並更新本政策。喺你冇主動開啟之前，一切數據都只留喺裝置本機。",
+        "將來如果推出跨裝置進度同步，會係完全自願（opt-in），並且必須由家長主動開啟。我哋會喺開啟前清楚說明會同步邊啲學習檔案資料、儲存位置同刪除方法，並更新本政策。喺你冇主動開啟之前，一切數據都只留喺裝置本機。",
       ],
       [
         "6. 網站（canduckgo.com）",
@@ -447,7 +455,7 @@ export const privacyCopy = {
       ],
       [
         "7. 資料刪除同你嘅權利",
-        "App 進度資料：喺 app 內「家長角落」可以隨時重設，或者直接刪除 app。\n\n你有權查詢我哋持有嘅關於你嘅資料（如有）、要求更正或刪除。我哋會喺合理時間內回覆。",
+        "本機學習檔案：喺 app 內「家長角落」可以逐個重設或永久刪除；刪除 app 亦會清除所有本機學習檔案。\n\n你有權查詢我哋持有嘅關於你嘅資料（如有）、要求更正或刪除。我哋會喺合理時間內回覆。",
       ],
       [
         "8. 政策更新",
@@ -458,9 +466,9 @@ export const privacyCopy = {
   en: {
     back: "Back",
     title: "Privacy Policy",
-    updated: "Last updated: 15 July 2026",
+    updated: "Last updated: 18 July 2026",
     summary:
-      "In short: CanDuckGo collects no personal data. No ads, no tracking, no third-party analytics. Learning progress is stored only on your device.",
+      "In short: CanDuckGo does not receive or collect personal data. No ads, no tracking, no third-party analytics. Optional nicknames and learning progress stay only on your device.",
     contactLine: "Privacy contact for WHITE CORNERSTONE PTY LTD:",
     sections: [
       [
@@ -469,7 +477,7 @@ export const privacyCopy = {
       ],
       [
         "2. What we collect",
-        "In the app: no personal data at all. There is no registration or login, and we never ask for your name, email, phone number, location or any identifier.\n\nLearning progress (stars, completed levels, stickers) is stored locally on your device only and is never uploaded to any server. Deleting the app deletes all progress data with it.",
+        "The app has no registration or login and does not ask for an email address, phone number, location, date of birth, gender, school or parent account. A parent may enter an optional nickname for each local learner profile; WHITE CORNERSTONE PTY LTD does not receive or have access to that nickname.\n\nEach device supports up to 6 learner profiles. Nicknames and learning progress (stars, completed levels, stickers and learned characters) are stored locally on your device only and are never uploaded to any server. Deleting the app deletes all local learner profiles with it.",
       ],
       [
         "3. Ads and tracking",
@@ -481,7 +489,7 @@ export const privacyCopy = {
       ],
       [
         "5. Cloud sync (future, opt-in only)",
-        "If cross-device progress sync is introduced in the future, it will be strictly opt-in and must be enabled by a parent. Only learning-progress data would be synced, and we will clearly explain what is stored, where, and how to delete it before you enable it — and update this policy. Until you actively opt in, all data stays on the device.",
+        "If cross-device progress sync is introduced in the future, it will be strictly opt-in and must be enabled by a parent. We will clearly explain which learner-profile data would be synced, where it is stored and how to delete it before you enable sync — and update this policy. Until you actively opt in, all data stays on the device.",
       ],
       [
         "6. The website (canduckgo.com)",
@@ -489,7 +497,7 @@ export const privacyCopy = {
       ],
       [
         "7. Data deletion and your rights",
-        "App progress data: reset it any time in the in-app Parent Corner, or simply delete the app.\n\nYou have the right to ask what data we hold about you (if any), and to request correction or deletion. We will respond within a reasonable time.",
+        "Local learner profiles can be reset or permanently deleted one at a time in the in-app Parent Corner. Deleting the app clears every local learner profile.\n\nYou have the right to ask what data we hold about you (if any), and to request correction or deletion. We will respond within a reasonable time.",
       ],
       [
         "8. Changes to this policy",
