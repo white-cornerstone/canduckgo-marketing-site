@@ -22,6 +22,7 @@ import {
 const base = import.meta.env.BASE_URL;
 const asset = (path) => `${base}${path.replace(/^\//, "")}`;
 const page = (path = "") => `${base}${path}`;
+const appStoreUrl = "https://apps.apple.com/us/app/canduckgo/id6791206205";
 
 function useLanguage() {
   const initial = new URLSearchParams(window.location.search).get("lang");
@@ -89,27 +90,41 @@ function LandingNav({ t, lang, toggleLang }) {
         <a href="#faq">FAQ</a>
       </div>
       <LanguageButton lang={lang} onToggle={toggleLang} />
-      <a className="cta-button nav-cta" href="#stores">
+      <a
+        className="cta-button nav-cta"
+        href={appStoreUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
         {t.navCta}
       </a>
     </nav>
   );
 }
 
-function StoreBadges() {
+function StoreBadges({ t }) {
   return (
-    <div className="store-badges" aria-label="App stores, coming soon">
-      <div className="store-badge">
+    <div className="store-badges" aria-label={t.storeBadgesLabel}>
+      <a
+        className="store-badge store-badge--link"
+        href={appStoreUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={t.appStoreAria}
+      >
         <FaApple aria-hidden="true" />
         <span>
           <small>Download on the</small>
           <strong>App Store</strong>
         </span>
-      </div>
-      <div className="store-badge">
+      </a>
+      <div
+        className="store-badge store-badge--pending"
+        aria-label={t.googlePlayStatus}
+      >
         <FaGooglePlay aria-hidden="true" />
         <span>
-          <small>GET IT ON</small>
+          <small>{t.googlePlayBadgeTop}</small>
           <strong>Google Play</strong>
         </span>
       </div>
@@ -153,7 +168,7 @@ function Hero({ t }) {
           <p id="stores" className="soon-label">
             {t.badgeSoonTop}
           </p>
-          <StoreBadges />
+          <StoreBadges t={t} />
         </div>
         <div className="hero__visual reveal reveal--delay">
           <div className="screenshot-frame hero-frame">
@@ -485,7 +500,12 @@ function Footer({ t }) {
         <div>
           <h2>{t.footTitle}</h2>
           <p>{t.footSub}</p>
-          <a className="cta-button" href="#stores">
+          <a
+            className="cta-button"
+            href={appStoreUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             {t.footCta}
           </a>
           <nav aria-label="Footer">

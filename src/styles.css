@@ -268,9 +268,6 @@ voxel-prop {
 .store-badges {
   display: flex;
   gap: 14px;
-  opacity: 0.55;
-  filter: saturate(0.6);
-  cursor: not-allowed;
 }
 .store-badge {
   display: flex;
@@ -282,6 +279,25 @@ voxel-prop {
   border-radius: 12px;
   background: #000;
   color: #fff;
+}
+.store-badge--link {
+  transition:
+    transform 0.16s,
+    box-shadow 0.16s;
+}
+.store-badge--link:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(60, 90, 110, 0.28);
+}
+.store-badge--link:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+.store-badge--pending {
+  cursor: not-allowed;
+  filter: saturate(0.6);
+  opacity: 0.55;
 }
 .store-badge > svg {
   width: 28px;
