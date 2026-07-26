@@ -271,6 +271,7 @@
       connectedCallback() {
         if (this._init) return;
         this._init = true;
+        this._active = true;
         this.style.display = this.style.display || 'block';
         this.style.touchAction = 'pan-y';
         this.style.cursor = 'grab';
@@ -303,6 +304,8 @@
         lift.children.forEach((c) => { c.position.x -= cx; c.position.z -= cz; });
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        this._renderer = renderer;
+        this._scene = scene;
         renderer.setClearColor(0x000000, 0);
         this.appendChild(renderer.domElement);
         renderer.domElement.style.width = '100%';
@@ -317,34 +320,41 @@
           camera.updateProjectionMatrix();
         };
         resize();
-        new ResizeObserver(resize).observe(this);
+        this._resizeObserver = new ResizeObserver(resize);
+        this._resizeObserver.observe(this);
 
         // interaction: drag to spin (inertia), tap to hop
         let dragging = false, lastX = 0, moved = 0;
         this._vel = 0;
-        this.addEventListener('pointerdown', (e) => {
+        const pointerDown = (e) => {
           dragging = true; lastX = e.clientX; moved = 0;
           this.style.cursor = 'grabbing';
           this.setPointerCapture(e.pointerId);
-        });
-        this.addEventListener('pointermove', (e) => {
+        };
+        const pointerMove = (e) => {
           if (!dragging) return;
           const dx = e.clientX - lastX; lastX = e.clientX; moved += Math.abs(dx);
           pivot.rotation.y += dx * 0.013;
           this._vel = dx * 0.013;
-        });
+        };
         const release = () => {
           if (!dragging) return;
           dragging = false;
           this.style.cursor = 'grab';
           if (moved < 6) this._hopT = 0; // tap → hop
         };
+        this._pointerHandlers = { pointerDown, pointerMove, release };
+        this.addEventListener('pointerdown', pointerDown);
+        this.addEventListener('pointermove', pointerMove);
         this.addEventListener('pointerup', release);
         this.addEventListener('pointercancel', release);
 
         // visibility-gated render loop
         this._visible = false;
-        new IntersectionObserver((entries) => { this._visible = entries[0].isIntersecting; }, { rootMargin: '80px' }).observe(this);
+        this._intersectionObserver = new IntersectionObserver((entries) => {
+          this._visible = entries[0].isIntersecting;
+        }, { rootMargin: '80px' });
+        this._intersectionObserver.observe(this);
 
         const anim = this.getAttribute('anim') || (this.getAttribute('model') === 'duck' ? 'idle' : 'spin');
         this._hopT = 999;
@@ -353,7 +363,8 @@
         let t = 0;
 
         const loop = () => {
-          requestAnimationFrame(loop);
+          if (!this._active) return;
+          this._raf = requestAnimationFrame(loop);
           const now = performance.now();
           const dt = Math.min((now - lastFrame) / 1000, 0.05);
           lastFrame = now;
@@ -406,7 +417,41 @@
           }
           renderer.render(scene, camera);
         };
-        loop();
+        this._raf = requestAnimationFrame(loop);
+      }
+
+      disconnectedCallback() {
+        if (!this._init) return;
+
+        this._active = false;
+        this._visible = false;
+        if (this._raf) cancelAnimationFrame(this._raf);
+        this._resizeObserver?.disconnect();
+        this._intersectionObserver?.disconnect();
+
+        if (this._pointerHandlers) {
+          const { pointerDown, pointerMove, release } = this._pointerHandlers;
+          this.removeEventListener('pointerdown', pointerDown);
+          this.removeEventListener('pointermove', pointerMove);
+          this.removeEventListener('pointerup', release);
+          this.removeEventListener('pointercancel', release);
+        }
+
+        this._scene?.traverse((object) => object.geometry?.dispose());
+        if (this._renderer) {
+          this._renderer.dispose();
+          this._renderer.forceContextLoss();
+          this._renderer.domElement.remove();
+        }
+
+        this._raf = null;
+        this._renderer = null;
+        this._scene = null;
+        this._resizeObserver = null;
+        this._intersectionObserver = null;
+        this._pointerHandlers = null;
+        this._wings = null;
+        this._init = false;
       }
     }
 

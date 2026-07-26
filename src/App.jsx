@@ -256,7 +256,7 @@ function Features({ t }) {
           {cards.map(([model, title, body, color]) => (
             <article
               className={`feature-card feature-card--${color} reveal-on-scroll`}
-              key={title}
+              key={model}
             >
               <Voxel model={model} />
               <h3>{title}</h3>
@@ -282,7 +282,7 @@ function LearningMap({ t }) {
         </div>
         <div className="stage-grid">
           {t.stages.map(([badge, title, body], i) => (
-            <article className={`stage-card stage-card--${i + 1}`} key={badge}>
+            <article className={`stage-card stage-card--${i + 1}`} key={i}>
               <Voxel model={`medal${i + 1}`} />
               <span className="stage-badge display-font">{badge}</span>
               <h3>{title}</h3>
