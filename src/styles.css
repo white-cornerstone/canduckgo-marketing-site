@@ -294,11 +294,6 @@ voxel-prop {
   transform: translateY(1px);
   box-shadow: none;
 }
-.store-badge--pending {
-  cursor: not-allowed;
-  filter: saturate(0.6);
-  opacity: 0.55;
-}
 .store-badge > svg {
   width: 28px;
   height: 28px;

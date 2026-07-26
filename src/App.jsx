@@ -23,6 +23,8 @@ const base = import.meta.env.BASE_URL;
 const asset = (path) => `${base}${path.replace(/^\//, "")}`;
 const page = (path = "") => `${base}${path}`;
 const appStoreUrl = "https://apps.apple.com/us/app/canduckgo/id6791206205";
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.canduckgo.game&pcampaignid=web_share";
 
 function useLanguage() {
   const initial = new URLSearchParams(window.location.search).get("lang");
@@ -90,12 +92,7 @@ function LandingNav({ t, lang, toggleLang }) {
         <a href="#faq">FAQ</a>
       </div>
       <LanguageButton lang={lang} onToggle={toggleLang} />
-      <a
-        className="cta-button nav-cta"
-        href={appStoreUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a className="cta-button nav-cta" href="#stores">
         {t.navCta}
       </a>
     </nav>
@@ -118,16 +115,19 @@ function StoreBadges({ t }) {
           <strong>App Store</strong>
         </span>
       </a>
-      <div
-        className="store-badge store-badge--pending"
-        aria-label={t.googlePlayStatus}
+      <a
+        className="store-badge store-badge--link"
+        href={googlePlayUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={t.googlePlayAria}
       >
         <FaGooglePlay aria-hidden="true" />
         <span>
-          <small>{t.googlePlayBadgeTop}</small>
+          <small>GET IT ON</small>
           <strong>Google Play</strong>
         </span>
-      </div>
+      </a>
     </div>
   );
 }
@@ -500,12 +500,7 @@ function Footer({ t }) {
         <div>
           <h2>{t.footTitle}</h2>
           <p>{t.footSub}</p>
-          <a
-            className="cta-button"
-            href={appStoreUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className="cta-button" href="#stores">
             {t.footCta}
           </a>
           <nav aria-label="Footer">
