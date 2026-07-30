@@ -191,6 +191,150 @@ function Hero({ t }) {
   );
 }
 
+const featureHighlightImages = [
+  "assets/features/practice-modes.webp?v=2",
+  "assets/features/read-aloud.webp?v=2",
+  "assets/features/earn-tokens.webp?v=2",
+  "assets/features/learner-profiles.webp?v=2",
+  null,
+  "assets/features/growing-map.webp?v=2",
+];
+
+const parentReportImages = [
+  "assets/features/parent-report-overview.webp?v=2",
+  "assets/features/parent-report-skills.webp?v=2",
+  "assets/features/parent-report-progress.webp?v=2",
+];
+
+const featureModalImages = featureHighlightImages.map((image, index) =>
+  index === 4 ? parentReportImages[0] : image,
+);
+
+function ParentReportGallery({ t }) {
+  const [activeReport, setActiveReport] = useState(0);
+  const showReport = (offset) => {
+    setActiveReport(
+      (current) =>
+        (current + offset + parentReportImages.length) % parentReportImages.length,
+    );
+  };
+
+  return (
+    <figure className="parent-report-gallery">
+      <img
+        src={asset(parentReportImages[activeReport])}
+        alt={t.parentReportCaptions[activeReport]}
+        loading="lazy"
+      />
+      <button
+        type="button"
+        className="parent-report-gallery__nav parent-report-gallery__nav--previous"
+        onClick={(event) => {
+          event.stopPropagation();
+          showReport(-1);
+        }}
+        aria-label={t.parentReportPrevious}
+      >
+        <FaChevronLeft aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        className="parent-report-gallery__nav parent-report-gallery__nav--next"
+        onClick={(event) => {
+          event.stopPropagation();
+          showReport(1);
+        }}
+        aria-label={t.parentReportNext}
+      >
+        <FaChevronRight aria-hidden="true" />
+      </button>
+      <figcaption>
+        <span>{t.parentReportCaptions[activeReport]}</span>
+        <span className="parent-report-gallery__dots" aria-hidden="true">
+          {parentReportImages.map((image, index) => (
+            <i className={index === activeReport ? "is-active" : ""} key={image} />
+          ))}
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
+
+function FeatureModal({ t, activeFeature, onChange, onClose }) {
+  const closeButtonRef = useRef(null);
+  const featureCount = t.featureHighlights.length;
+  const [title, body, imageAlt] = t.featureHighlights[activeFeature];
+  const showFeature = (offset) => {
+    onChange((activeFeature + offset + featureCount) % featureCount);
+  };
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft") showFeature(-1);
+      if (event.key === "ArrowRight") showFeature(1);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeyDown);
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  });
+
+  return (
+    <div className="feature-modal" onMouseDown={onClose}>
+      <div
+        className="feature-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="feature-modal-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="feature-modal__close"
+          onClick={onClose}
+          aria-label={t.featureModalClose}
+          ref={closeButtonRef}
+        >
+          ×
+        </button>
+        <button
+          type="button"
+          className="feature-modal__nav feature-modal__nav--previous"
+          onClick={() => showFeature(-1)}
+          aria-label={t.featureModalPrevious}
+        >
+          <FaChevronLeft aria-hidden="true" />
+        </button>
+        <div className="feature-modal__image">
+          <img src={asset(featureModalImages[activeFeature])} alt={imageAlt} />
+        </div>
+        <div className="feature-modal__copy">
+          <span className="feature-modal__count">
+            {activeFeature + 1} / {featureCount}
+          </span>
+          <h2 id="feature-modal-title">{title}</h2>
+          <p>{body}</p>
+        </div>
+        <button
+          type="button"
+          className="feature-modal__nav feature-modal__nav--next"
+          onClick={() => showFeature(1)}
+          aria-label={t.featureModalNext}
+        >
+          <FaChevronRight aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Belief({ t }) {
   const stats = [
     ["4", t.stat1],
@@ -225,18 +369,33 @@ function Belief({ t }) {
 }
 
 function Features({ t }) {
-  const cards = [
-    ["headphones", t.f2Title, t.f2Body, "yellow"],
-    ["cards", t.f3Title, t.f3Body, "blue"],
-    ["album", t.f4Title, t.f4Body, "purple"],
-  ];
+  const [activeFeature, setActiveFeature] = useState(null);
+  const featureTriggerRef = useRef(null);
+  const openFeature = (index, trigger) => {
+    featureTriggerRef.current = trigger;
+    setActiveFeature(index);
+  };
+  const closeFeature = () => {
+    setActiveFeature(null);
+    requestAnimationFrame(() => featureTriggerRef.current?.focus());
+  };
+
   return (
     <section id="features" className="features section-pad">
       <div className="section-shell">
         <div className="section-heading">
           <p className="kicker">{t.featKicker}</p>
           <h2>{t.featTitle}</h2>
+          <p>{t.featBody}</p>
         </div>
+        <ol className="feature-loop" aria-label={t.featureLoopLabel}>
+          {t.featureLoopSteps.map((step, index) => (
+            <li key={step}>
+              <span>{index + 1}</span>
+              <strong>{step}</strong>
+            </li>
+          ))}
+        </ol>
         <article className="feature-main reveal-on-scroll">
           <div className="feature-main__copy">
             <div className="voxel-icon voxel-icon--mint">
@@ -252,19 +411,47 @@ function Features({ t }) {
             />
           </div>
         </article>
-        <div className="feature-cards">
-          {cards.map(([model, title, body, color]) => (
-            <article
-              className={`feature-card feature-card--${color} reveal-on-scroll`}
-              key={model}
-            >
-              <Voxel model={model} />
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
+        <div className="feature-highlight-grid">
+          {t.featureHighlights.map(([title, body, imageAlt], index) => {
+            return (
+              <article className="feature-highlight-card reveal-on-scroll" key={title}>
+                <div className="feature-highlight-card__media">
+                  {index === 4 ? (
+                    <ParentReportGallery t={t} />
+                  ) : (
+                    <img
+                      src={asset(featureHighlightImages[index])}
+                      alt={imageAlt}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+                <div className="feature-highlight-card__copy">
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{body}</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className="feature-highlight-card__open"
+                  onClick={(event) => openFeature(index, event.currentTarget)}
+                  aria-label={`${t.featureModalOpen}: ${title}`}
+                />
+              </article>
+            );
+          })}
         </div>
+        <p className="feature-compatibility">{t.featureCompatibility}</p>
       </div>
+      {activeFeature !== null && (
+        <FeatureModal
+          t={t}
+          activeFeature={activeFeature}
+          onChange={setActiveFeature}
+          onClose={closeFeature}
+        />
+      )}
     </section>
   );
 }
