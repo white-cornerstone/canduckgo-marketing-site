@@ -6,7 +6,7 @@ export const landingCopy = {
     navCta: "立即下載",
     heroKicker: "廣東話筆劃學習遊戲",
     heroSub:
-      "跟住鴨仔一筆一劃學繁體字，聽住廣東話玩住學。專為 4–12 歲小朋友、同埋想學廣東話嘅大小朋友而設。",
+      "跟住鴨仔一筆一劃學繁體字，再用讀、聽、寫、睇四種練習玩住溫習。專為 4–12 歲小朋友、同埋想學廣東話嘅大小朋友而設。",
     chipFree: "完全免費",
     chipNoAds: "無廣告",
     chipOffline: "離線可玩",
@@ -25,15 +25,58 @@ export const landingCopy = {
     stat4: "款收藏貼紙",
     featKicker: "遊戲特色",
     featTitle: "玩住學，學住玩",
-    f1Title: "一筆一劃描字",
+    featBody:
+      "由課堂學字，到讀、聽、寫、睇四式練習，再將學識嘅字帶入地圖小遊戲。每一步都互相接住，令溫習變成下一次探索嘅動力。",
+    f1Title: "一筆一劃，真正學識",
     f1Body:
-      "跟住筆順慢慢描，寫啱即刻有星星。每隻字都有廣東話讀音、粵拼同英文解釋，寫字同時練聽講。",
-    f2Title: "聽音揀字",
-    f2Body: "聽廣東話讀音，喺字卡入面揀返啱嗰隻字，練埋耳仔。",
-    f3Title: "配對遊戲",
-    f3Body: "字同圖配對，輕輕鬆鬆溫故知新，愈玩愈熟。",
-    f4Title: "貼紙簿",
-    f4Body: "過關儲星星，解鎖 voxel 貼紙——用手指撥吓佢會轉，篤吓仲有聲！",
+      "300 個常用繁體字都有清楚筆順示範、三階段描字、廣東話讀音、粵拼同英文意思；提示會慢慢淡出，等小朋友由跟住寫到自己寫。",
+    featureLoopLabel: "廣得好學習循環",
+    featureLoopSteps: ["學新字", "讀・聽・寫・睇", "賺代幣", "地圖小遊戲"],
+    featureHighlights: [
+      [
+        "四式練習，記得更實",
+        "讀出嚟、聽得明、寫得啱、睇得熟；每種短練習都只會用返小朋友已經學過嘅字。",
+        "廣得好地圖畫面，下方顯示讀、聽、寫、睇四種練習",
+      ],
+      [
+        "廣東話跟讀，即時有回應",
+        "支援裝置用內置廣東話語音辨識聽小朋友跟讀；錄音唔會儲存，亦唔會上載。",
+        "廣得好廣東話跟讀練習畫面",
+      ],
+      [
+        "練習賺代幣，解鎖新玩法",
+        "完成練習可以賺代幣，再用已學字挑戰筆劃切切樂；家長亦可設定每日代幣上限。",
+        "完成廣得好練習後獲得代幣嘅畫面",
+      ],
+      [
+        "一部機，最多六個小朋友",
+        "每個學習檔案都有自己嘅鴨仔、星星、貼紙、已學字同代幣紀錄，兄弟姊妹唔會撈亂進度。",
+        "廣得好管理小朋友學習檔案畫面",
+      ],
+      [
+        "家長報告睇到學習走勢",
+        "最近 7 日練習趨勢、首次答啱率，同讀、聽、寫、睇能力分佈都一目了然。",
+        "廣得好家長學習報告畫面",
+      ],
+      [
+        "地圖會同學習一齊成長",
+        "完成關卡，島上地標就會一步步變得更精彩；每次返到地圖都有新發現。",
+        "廣得好隨學習進度成長嘅主題島地圖",
+      ],
+    ],
+    parentReportPrevious: "上一張家長報告",
+    parentReportNext: "下一張家長報告",
+    featureModalOpen: "開啟功能大圖",
+    featureModalClose: "關閉功能大圖",
+    featureModalPrevious: "上一項遊戲特色",
+    featureModalNext: "下一項遊戲特色",
+    parentReportCaptions: [
+      "最近 7 日學習趨勢",
+      "讀、聽、寫、睇能力",
+      "代幣紀錄同學習路線",
+    ],
+    featureCompatibility:
+      "跟讀練習需要支援裝置內廣東話語音辨識嘅裝置；其他課堂、練習同遊戲繼續可以完全離線玩。",
     mapKicker: "學習地圖",
     mapTitle: "一島一主題，四個階段慢慢升",
     mapBody:
@@ -88,7 +131,7 @@ export const landingCopy = {
       ["離線完全可玩", "飛機上、車上都玩到，唔使 Wi-Fi、唔使擔心數據。"],
       [
         "家長角落",
-        "學習報告一目了然：星星、學識嘅字、完成嘅關卡。外部連結一律有家長門控。",
+        "每個小朋友都有獨立報告：最近 7 日趨勢、首次答啱率、四式練習分佈同代幣紀錄。外部連結一律有家長門控。",
       ],
     ],
     parentCaption: "遊戲入面嘅學習報告畫面",
@@ -109,7 +152,7 @@ export const landingCopy = {
       ],
       [
         "要唔要上網先玩到？",
-        "唔使。落咗 app 之後離線完全可玩，進度儲存喺裝置入面。雲端同步係家長主動選擇先會開。",
+        "唔使。落咗 app 之後離線完全可玩，進度儲存喺裝置入面，唔會上傳。跟讀練習會用支援裝置內置嘅廣東話語音辨識。",
       ],
       [
         "屋企有幾個小朋友，可以分開進度嗎？",
@@ -148,7 +191,7 @@ export const landingCopy = {
     navCta: "Download now",
     heroKicker: "A CANTONESE STROKE-ORDER GAME",
     heroSub:
-      "Learn traditional Chinese characters stroke by stroke with a little duck — all in Cantonese. Made for kids aged 4–12 and Cantonese learners of any age.",
+      "Learn traditional Chinese stroke by stroke, then practise by reading, listening, writing and looking. Made for kids aged 4–12 and Cantonese learners of any age.",
     chipFree: "Completely free",
     chipNoAds: "No ads",
     chipOffline: "Works offline",
@@ -167,17 +210,63 @@ export const landingCopy = {
     stat4: "stickers to collect",
     featKicker: "FEATURES",
     featTitle: "Play to learn, learn to play",
-    f1Title: "Trace stroke by stroke",
+    featBody:
+      "Lessons lead into reading, listening, writing and recognition practice, then learned characters come alive in map mini-games. Every step feeds the next discovery.",
+    f1Title: "Build real confidence, one stroke at a time",
     f1Body:
-      "Follow the stroke order and earn stars as you go. Every character comes with Cantonese audio, Jyutping and an English meaning — writing and listening practice in one.",
-    f2Title: "Listen & pick",
-    f2Body:
-      "Hear the Cantonese pronunciation and pick the matching character — great ear training.",
-    f3Title: "Matching game",
-    f3Body: "Match characters with pictures for easy, playful review.",
-    f4Title: "Sticker book",
-    f4Body:
-      "Collect stars to unlock voxel stickers — spin them with a flick, tap them for sounds!",
+      "All 300 traditional characters include a clear stroke-order demo, three-stage tracing, Cantonese audio, Jyutping and an English meaning. Guidance fades until learners can write independently.",
+    featureLoopLabel: "The CanDuckGo learning loop",
+    featureLoopSteps: [
+      "Learn a character",
+      "Read · Listen · Write · Look",
+      "Earn tokens",
+      "Play map mini-games",
+    ],
+    featureHighlights: [
+      [
+        "Four ways to make learning stick",
+        "Read it, hear it, write it and recognise it. Every short practice uses characters the learner has already met.",
+        "CanDuckGo map with Read, Listen, Write and Look practice modes",
+      ],
+      [
+        "Read Cantonese aloud and get a response",
+        "On supported devices, built-in Cantonese speech recognition listens to each attempt. Recordings are never stored or uploaded.",
+        "Cantonese read-aloud practice in CanDuckGo",
+      ],
+      [
+        "Practise, earn tokens, unlock new play",
+        "Practice earns tokens for Stroke Slice, a mini-game powered by learned characters. Parents can set a daily token limit too.",
+        "CanDuckGo practice completion screen awarding tokens",
+      ],
+      [
+        "Up to six learners on one device",
+        "Each learner gets their own duck, stars, stickers, learned characters and token history, so siblings never mix up progress.",
+        "CanDuckGo learner profile management screen",
+      ],
+      [
+        "Parent reports that show the learning story",
+        "See seven-day activity trends, first-try accuracy and the balance across reading, listening, writing and looking.",
+        "CanDuckGo parent learning report",
+      ],
+      [
+        "A map that grows with every lesson",
+        "Complete levels and watch island landmarks evolve into richer discoveries, giving every return to the map a sense of progress.",
+        "A CanDuckGo theme island map growing with learning progress",
+      ],
+    ],
+    parentReportPrevious: "Previous parent report",
+    parentReportNext: "Next parent report",
+    featureModalOpen: "Open feature preview",
+    featureModalClose: "Close feature preview",
+    featureModalPrevious: "Previous game feature",
+    featureModalNext: "Next game feature",
+    parentReportCaptions: [
+      "Seven-day learning trends",
+      "Reading, listening, writing and recognition",
+      "Token history and learning path",
+    ],
+    featureCompatibility:
+      "Read-aloud practice requires a device with on-device Cantonese speech recognition. All other lessons, practice modes and games remain fully playable offline.",
     mapKicker: "LEARNING MAP",
     mapTitle: "One island per theme, four stages up",
     mapBody:
@@ -251,7 +340,7 @@ export const landingCopy = {
       ],
       [
         "Parent corner",
-        "A clear learning report: stars earned, characters learned, levels completed. All external links sit behind a parental gate.",
+        "Each learner has a separate report with seven-day trends, first-try accuracy, four-skill practice balance and token history. All external links sit behind a parental gate.",
       ],
     ],
     parentCaption: "The in-game learning report",
@@ -272,7 +361,7 @@ export const landingCopy = {
       ],
       [
         "Do I need internet to play?",
-        "No. Once installed, the game is fully playable offline and progress is saved on the device. Cloud sync is strictly opt-in by a parent.",
+        "No. Once installed, the game is fully playable offline and progress stays on the device without being uploaded. Read-aloud practice uses supported devices’ built-in Cantonese speech recognition.",
       ],
       [
         "Can siblings keep separate progress?",
